@@ -10,7 +10,7 @@ exports.handler = async (event, context) => {
       // Return a success response
       return {
         statusCode: 200,
-        body: JSON.stringify({ message: 'POST request processed successfully' }),
+        body: JSON.stringify({ message: 'POST request processed successfully'.concat(' ', requestBody) }),
       };
     } catch (error) {
       // Return an error response if there was an issue processing the request
