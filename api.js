@@ -7,11 +7,20 @@ exports.handler = async (event, context) => {
       // Save the data to a database or perform other necessary operations
       // ...
 
-      // Return a success response
       return {
-        statusCode: 200,
-        body: JSON.stringify({ message: 'POST request processed successfully'.concat(' ', requestBody) }),
-      };
+        headers: {
+            "content-type": "application/json",
+          },
+      statusCode: 200,
+ 
+      body: JSON.stringify({"message":variableX}),
+      };  
+
+      // Return a success response
+      //return {
+      //  statusCode: 200,
+      //  body: JSON.stringify({ message: 'POST request processed successfully'.concat(' ', requestBody) }),
+      //};
     } catch (error) {
       // Return an error response if there was an issue processing the request
       return {
