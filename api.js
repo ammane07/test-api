@@ -8,10 +8,10 @@ exports.handler = async (event, context) => {
       // Save the data to a database or perform other necessary operations
       // ...
 
-      const requestBody = event.body;
+     // const requestBody = event.body;
 
-      console.log(requestBody);
-      console.log(requestBody.mode);
+     // console.log(requestBody);
+     // console.log(requestBody.mode);
 
       //let variableX = requestBody.mode;
       let variableX = requestBody.data;
