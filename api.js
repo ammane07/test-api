@@ -2,7 +2,8 @@ exports.handler = async (event, context) => {
   if (event.httpMethod === 'POST') {
     try {
       // Parse the incoming JSON payload from the request body
-      //const requestBody = JSON.parse(event.body);
+      const requestBody = JSON.parse(event.body);
+      console.log('data is : ', requestBody.data)
 
       // Save the data to a database or perform other necessary operations
       // ...
@@ -12,7 +13,8 @@ exports.handler = async (event, context) => {
       console.log(requestBody);
       console.log(requestBody.mode);
 
-      let variableX = requestBody.mode;
+      //let variableX = requestBody.mode;
+      let variableX = requestBody.data;
 
 
       return {
@@ -21,7 +23,7 @@ exports.handler = async (event, context) => {
           },
       statusCode: 200,
  
-      body: JSON.stringify({"New message":variableX}),
+      body: JSON.stringify({"Data message is ":variableX}),
       };  
 
       // Return a success response
